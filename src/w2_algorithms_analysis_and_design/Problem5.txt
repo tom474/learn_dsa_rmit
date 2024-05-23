@@ -1,0 +1,9 @@
+N1 = 1,000
+N2 = 1,000,000
+
+=> N2 is 1000 times bigger than N1
+
+=> Because the complexity is O(N^3), the new running time
+will be (1,000^3) times longer than the previous one
+
+(1,000^3) * 100msec = 100,000,000,000msec = 1157.41 days = 3.17 years

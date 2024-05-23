@@ -1,0 +1,24 @@
+// The numbers in {} are the execution times of each statement
+int upperBound(Student[] Std, double searchGPA)
+    N = length(Std)                             {1}
+    for i = 0 to (N - 1)                        {N}
+        if (Std[i].GPA > searchGPA) return i    {N}
+    return N                                    {1}
+
+Total execution time: 1 + N + N + 1 = 2N + 2
+Remove the insignificant component and multiplicative constant
+=> Complexity: O(N)
+
+*** Proposal
+int upperBound(Student[] Std, double searchGPA)
+    int left = 0                                {1}
+    int right = N - 1                           {1}
+    while (left < right)                        {logN}
+        int mid = (left + right) / 2            {logN}
+        if (Std[mid].GPA < searchGPA)           {logN}
+            left = mid                          {logN}
+        if (Std[mid].GPA > searchGPA)           {logN}
+            left = mid                          {logN}
+    return left
+
+=> Complexity: O(logN)
